@@ -40,6 +40,8 @@ final class TodolistView: UIViewController {
         listTableView.dataSource = self
         listTableView.showsVerticalScrollIndicator = false
         listTableView.backgroundColor = .systemGray5
+        listTableView.register(TodolistCell.self, forCellReuseIdentifier: "TodolistCell")
+        listTableView.separatorStyle = .none
     }
     
     private func configureNavigationController() {
@@ -52,10 +54,18 @@ final class TodolistView: UIViewController {
 
 extension TodolistView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        Int()
+        10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "TodolistCell", for: indexPath) as? TodolistCell else { return UITableViewCell() }
+        cell.selectionStyle = .none
+        
+        let viewModel = DefaultTodolistViewModel()
+        cell.delegate = { view, imageView, button in
+            viewModel.selectedButtonTapped(view: view, imageView: imageView, button: button)
+        }
+        
+        return cell
     }
 }

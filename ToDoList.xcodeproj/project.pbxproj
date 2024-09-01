@@ -17,6 +17,7 @@
 		012F412C2C7FA19600A6E52F /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F412B2C7FA19600A6E52F /* Coordinator.swift */; };
 		012F412F2C7FA95900A6E52F /* UiNavigationBar + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F412E2C7FA95900A6E52F /* UiNavigationBar + UI.swift */; };
 		012F41312C7FABB000A6E52F /* View + UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F41302C7FABB000A6E52F /* View + UI.swift */; };
+		012F41332C7FAFA300A6E52F /* TodolistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F41322C7FAFA300A6E52F /* TodolistCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		012F412B2C7FA19600A6E52F /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		012F412E2C7FA95900A6E52F /* UiNavigationBar + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiNavigationBar + UI.swift"; sourceTree = "<group>"; };
 		012F41302C7FABB000A6E52F /* View + UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View + UI.swift"; sourceTree = "<group>"; };
+		012F41322C7FAFA300A6E52F /* TodolistCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodolistCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			children = (
 				012F41272C7FA16E00A6E52F /* TodolistView.swift */,
 				012F41292C7FA17F00A6E52F /* TodolistViewModel.swift */,
+				012F41322C7FAFA300A6E52F /* TodolistCell.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				012F412C2C7FA19600A6E52F /* Coordinator.swift in Sources */,
 				012F410D2C7F9D4400A6E52F /* SceneDelegate.swift in Sources */,
 				012F41282C7FA16E00A6E52F /* TodolistView.swift in Sources */,
+				012F41332C7FAFA300A6E52F /* TodolistCell.swift in Sources */,
 				012F41312C7FABB000A6E52F /* View + UI.swift in Sources */,
 				012F41152C7F9D4400A6E52F /* ToDoList.xcdatamodeld in Sources */,
 			);
