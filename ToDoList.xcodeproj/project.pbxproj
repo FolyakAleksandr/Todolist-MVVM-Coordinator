@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0128F6B12C84DEE000590F69 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128F6B02C84DEE000590F69 /* NetworkManager.swift */; };
+		0128F6B42C84DF0500590F69 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0128F6B32C84DF0500590F69 /* Todo.swift */; };
+		0128F6CA2C84F44A00590F69 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 0128F6C92C84F44A00590F69 /* AlamofireDynamic */; };
+		0128F6CB2C84F44A00590F69 /* AlamofireDynamic in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 0128F6C92C84F44A00590F69 /* AlamofireDynamic */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		012F410B2C7F9D4400A6E52F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F410A2C7F9D4400A6E52F /* AppDelegate.swift */; };
 		012F410D2C7F9D4400A6E52F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F410C2C7F9D4400A6E52F /* SceneDelegate.swift */; };
 		012F41152C7F9D4400A6E52F /* ToDoList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 012F41132C7F9D4400A6E52F /* ToDoList.xcdatamodeld */; };
@@ -20,8 +24,24 @@
 		012F41332C7FAFA300A6E52F /* TodolistCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012F41322C7FAFA300A6E52F /* TodolistCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0128F6BB2C84EDF200590F69 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0128F6CB2C84F44A00590F69 /* AlamofireDynamic in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		012F41072C7F9D4400A6E52F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0128F6B02C84DEE000590F69 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		0128F6B32C84DF0500590F69 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		012F41072C7F9D4400A6E52F /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = ToDoList.app; path = "/Users/aleksandrfolyak/Desktop/ToDoList/build/Debug-iphoneos/ToDoList.app"; sourceTree = "<absolute>"; };
 		012F410A2C7F9D4400A6E52F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		012F410C2C7F9D4400A6E52F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		012F41142C7F9D4400A6E52F /* ToDoList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ToDoList.xcdatamodel; sourceTree = "<group>"; };
@@ -41,26 +61,42 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0128F6CA2C84F44A00590F69 /* AlamofireDynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0128F6AF2C84DE6500590F69 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0128F6B02C84DEE000590F69 /* NetworkManager.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		0128F6B22C84DEEC00590F69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0128F6B32C84DF0500590F69 /* Todo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0128F6C82C84F44A00590F69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		012F40FE2C7F9D4400A6E52F = {
 			isa = PBXGroup;
 			children = (
 				012F41092C7F9D4400A6E52F /* ToDoList */,
-				012F41082C7F9D4400A6E52F /* Products */,
+				0128F6C82C84F44A00590F69 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		012F41082C7F9D4400A6E52F /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				012F41072C7F9D4400A6E52F /* ToDoList.app */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		012F41092C7F9D4400A6E52F /* ToDoList */ = {
@@ -69,6 +105,8 @@
 				012F41212C7F9EFE00A6E52F /* Application */,
 				012F41242C7F9F8700A6E52F /* Data */,
 				012F412D2C7FA93400A6E52F /* Extensions */,
+				0128F6B22C84DEEC00590F69 /* Models */,
+				0128F6AF2C84DE6500590F69 /* Networking */,
 				012F41252C7FA0CA00A6E52F /* ToDoList */,
 				012F41222C7F9F1300A6E52F /* Resources */,
 			);
@@ -140,12 +178,16 @@
 				012F41032C7F9D4400A6E52F /* Sources */,
 				012F41042C7F9D4400A6E52F /* Frameworks */,
 				012F41052C7F9D4400A6E52F /* Resources */,
+				0128F6BB2C84EDF200590F69 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = ToDoList;
+			packageProductDependencies = (
+				0128F6C92C84F44A00590F69 /* AlamofireDynamic */,
+			);
 			productName = ToDoList;
 			productReference = 012F41072C7F9D4400A6E52F /* ToDoList.app */;
 			productType = "com.apple.product-type.application";
@@ -174,7 +216,10 @@
 				Base,
 			);
 			mainGroup = 012F40FE2C7F9D4400A6E52F;
-			productRefGroup = 012F41082C7F9D4400A6E52F /* Products */;
+			packageReferences = (
+				0128F6C32C84F40E00590F69 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
+			productRefGroup = 012F40FE2C7F9D4400A6E52F;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -200,8 +245,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0128F6B42C84DF0500590F69 /* Todo.swift in Sources */,
 				012F412F2C7FA95900A6E52F /* UiNavigationBar + UI.swift in Sources */,
 				012F412A2C7FA17F00A6E52F /* TodolistViewModel.swift in Sources */,
+				0128F6B12C84DEE000590F69 /* NetworkManager.swift in Sources */,
 				012F410B2C7F9D4400A6E52F /* AppDelegate.swift in Sources */,
 				012F412C2C7FA19600A6E52F /* Coordinator.swift in Sources */,
 				012F410D2C7F9D4400A6E52F /* SceneDelegate.swift in Sources */,
@@ -421,6 +468,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		0128F6C32C84F40E00590F69 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.9.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0128F6C92C84F44A00590F69 /* AlamofireDynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 0128F6C32C84F40E00590F69 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = AlamofireDynamic;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		012F41132C7F9D4400A6E52F /* ToDoList.xcdatamodeld */ = {

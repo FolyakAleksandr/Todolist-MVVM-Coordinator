@@ -4,7 +4,8 @@ final class TodolistCell: UITableViewCell {
     // MARK: - public variables
 
     var viewModel: TodolistViewModel?
-    var delegate: ((UIView, UIImageView, UIButton) -> Void)?
+    var delegateTapped: ((UIView, UIImageView, UIButton) -> Void)?
+    var delegateLoading: ((UIView, UIImageView, UIButton) -> Void)?
     
     // MARK: - private properties
 
@@ -26,9 +27,9 @@ final class TodolistCell: UITableViewCell {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        selectedButton.layer.cornerRadius = selectedButton.bounds.size.height / 2
+        makeViewRound()
     }
-
+    
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -91,12 +92,13 @@ final class TodolistCell: UITableViewCell {
         
         nameTaskLabel.topAnchor.constraint(equalTo: containerView.topAnchor, constant: 12).isActive = true
         nameTaskLabel.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 12).isActive = true
+        nameTaskLabel.widthAnchor.constraint(equalTo: containerView.widthAnchor, multiplier: 0.85).isActive = true
     }
 
     private func configureNameTaskLabel() {
-        nameTaskLabel.text = "Todo"
-        nameTaskLabel.font = .systemFont(ofSize: 22, weight: .bold)
+        nameTaskLabel.font = .systemFont(ofSize: 20, weight: .bold)
         nameTaskLabel.textColor = .black
+        nameTaskLabel.numberOfLines = 2
     }
     
     private func layoutDescriptionTaskLabel() {
@@ -109,7 +111,6 @@ final class TodolistCell: UITableViewCell {
     }
     
     private func configureDescriptionTaskLabel() {
-        descriptionTaskLabel.text = "Take a hike at a local park, local park local park"
         descriptionTaskLabel.font = .systemFont(ofSize: 18, weight: .light)
         descriptionTaskLabel.textColor = .darkGray
         descriptionTaskLabel.numberOfLines = 2
@@ -144,7 +145,6 @@ final class TodolistCell: UITableViewCell {
     private func configureSelectedImageView() {
         selectedImageView.image = UIImage(systemName: "checkmark.circle.fill")
         selectedImageView.tintColor = .systemGreen
-        selectedImageView.isHidden = true
     }
     
     private func layoutDateLabel() {
@@ -157,17 +157,28 @@ final class TodolistCell: UITableViewCell {
     }
     
     private func configureDateLabel() {
-        let date = Date()
         dateFormatter.dateFormat = "dd.MM.yyyy  HH:mm"
-        dateLabel.text = dateFormatter.string(from: date)
-        
         dateLabel.textColor = .darkGray
         dateLabel.font = .systemFont(ofSize: 17, weight: .light)
+    }
+    
+    private func makeViewRound() {
+        selectedButton.layoutIfNeeded()
+        selectedButton.layer.cornerRadius = selectedButton.frame.size.height / 2
     }
     
     // MARK: - objc methods
     
     @objc private func selectedTapped() {
-        delegate?(containerView, selectedImageView, selectedButton)
+        delegateTapped?(containerView, selectedImageView, selectedButton)
+    }
+    
+    // MARK: - configure
+    
+    func configureCell(_ nameTask: String, _ descriptionTask: String?, _ date: Date, _ completed: Bool) {
+        nameTaskLabel.text = nameTask
+        descriptionTaskLabel.text = descriptionTask ?? "No description"
+        dateLabel.text = dateFormatter.string(from: date)
+        delegateLoading?(containerView, selectedImageView, selectedButton)
     }
 }
